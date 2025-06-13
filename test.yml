@@ -16,7 +16,7 @@
      #   var: ping_output.stdout
     
      - name: install htop
-      ansible.builtin.shell: apt install htop
+      ansible.builtin.apt: install htop
       register: htopinstall_output    
 
      - name: Show htopisntall
