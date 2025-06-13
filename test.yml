@@ -1,14 +1,16 @@
 ---
-- name: Update apt cache
+- name: Update apt cache and ping internet
   hosts: all
   become: true
   tasks:
     - name: Update apt cache
       ansible.builtin.apt:
         update_cache: yes
+
     - name: Ping internet
       ansible.builtin.shell: ping -c 4 4.2.2.2
       register: ping_output
-    - name: Show ping
-      ansiable.builtin.debug:
+
+    - name: Show ping output
+      ansible.builtin.debug:
         var: ping_output.stdout
