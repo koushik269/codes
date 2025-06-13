@@ -24,3 +24,7 @@
     - name: Show htop install
       ansible.builtin.debug:
         var: htopinstall_output
+        
+    - name: Reboot after update
+  ansible.builtin.reboot:
+    reboot_timeout: 300
