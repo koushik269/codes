@@ -1,3 +1,8 @@
+---
 - name: Update apt cache
-  ansible.builtin.apt:
-    update_cache: yes
+  hosts: all
+  become: true
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
