@@ -7,4 +7,4 @@
       ansible.builtin.apt:
         update_cache: yes
     - name: Ping internet
-      ansible.builtin.shell: ping -c 4.2.2.2
+      ansible.builtin.shell: ping -c 4 4.2.2.2
