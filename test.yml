@@ -8,3 +8,7 @@
         update_cache: yes
     - name: Ping internet
       ansible.builtin.shell: ping -c 4 4.2.2.2
+      register: ping_output
+    - name: Show ping
+      ansiable.builtin.debug:
+        var: ping_output.stdout
