@@ -3,14 +3,22 @@
   hosts: all
   become: true
   tasks:
-    - name: Update apt cache
-      ansible.builtin.apt:
-        update_cache: yes
+    #- name: Update apt cache
+     # ansible.builtin.apt:
+      #  update_cache: yes
 
-    - name: Ping internet
-      ansible.builtin.shell: ping -c 4 4.2.2.2
-      register: ping_output
+   # - name: Ping internet
+   #   ansible.builtin.shell: ping -c 4 4.2.2.2
+   #   register: ping_output
 
-    - name: Show ping output
-      ansible.builtin.debug:
-        var: ping_output.stdout
+    #- name: Show ping output
+    #  ansible.builtin.debug:
+     #   var: ping_output.stdout
+    
+     - name: install htop
+      ansible.builtin.shell: apt install htop
+      register: htopinstall_output    
+
+     - name: Show htopisntall
+        ansible.builtin.debug:
+          var: htopinstall_output.stdout
